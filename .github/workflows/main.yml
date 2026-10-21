@@ -3,8 +3,6 @@ name: Build OfflinePay APK
 on:
   push:
     branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
   workflow_dispatch:
 
 jobs:
@@ -21,9 +19,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Download and Setup Gradle 8.4 Directly
+    - name: Download and Setup Gradle 8.4
       run: |
-        wget https://services.gradle.org/distributions/gradle-8.4-bin.zip
+        wget -q https://services.gradle.org/distributions/gradle-8.4-bin.zip
         unzip -q gradle-8.4-bin.zip
         echo "$PWD/gradle-8.4/bin" >> $GITHUB_PATH
 
