@@ -21,11 +21,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew || true
+    - name: Download and Setup Gradle 8.4 Directly
+      run: |
+        wget https://services.gradle.org/distributions/gradle-8.4-bin.zip
+        unzip -q gradle-8.4-bin.zip
+        echo "$PWD/gradle-8.4/bin" >> $GITHUB_PATH
 
-    - name: Build Debug APK with Gradle 8.4
-      run: ./gradlew assembleDebug --stacktrace
+    - name: Build Debug APK
+      run: gradle assembleDebug --stacktrace
 
     - name: Upload Debug APK Artifact
       uses: actions/upload-artifact@v4
