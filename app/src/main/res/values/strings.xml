@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OfflinePay</string>
+    <string name="accessibility_service_description">OfflinePay uses accessibility service to handle *99# USSD payments seamlessly in the background.</string>
+</resources>
