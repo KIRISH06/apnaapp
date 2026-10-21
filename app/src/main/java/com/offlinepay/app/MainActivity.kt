@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             MaterialTheme {
                 Surface(
@@ -27,6 +28,6 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-Composable fun Greeting(name: String) {
+fun Greeting(name: String) {
     Text(text = name)
 }
