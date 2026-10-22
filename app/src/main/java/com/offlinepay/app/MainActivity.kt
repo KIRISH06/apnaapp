@@ -1,4 +1,3 @@
-```kotlin
 package com.offlinepay.app
 
 import android.os.Bundle
